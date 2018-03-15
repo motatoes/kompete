@@ -164,7 +164,7 @@ data class Graph(var adjList:List<List<Edge>>) {
     }
 
     // for directed graphs: check whether the graph contains cycles
-    // false if no cycles are present, true otehrwise
+    // true if no cycles are present, false otehrwise
     fun acyclic():Boolean {
 //        var visited = Array<Boolean>(adjList.size, {false})
 
@@ -223,11 +223,11 @@ data class Graph(var adjList:List<List<Edge>>) {
 // (first line number of nodes and number o edges
 // .. and then e lines for each edeg)
 // [what about weights ???]
-//5 4
-//1 2
-//3 2
-//4 3
-//1 4
+5 4
+1 2
+3 2
+4 3
+1 4
 
 fun main(ars: Array<String>) {
 
