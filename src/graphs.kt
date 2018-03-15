@@ -144,7 +144,7 @@ data class Graph(var adjList:List<List<Edge>>) {
         var queue = Queue<Edge>(mutableListOf())
 
         // weight bellow does not matter as its just a starting point
-        // and neighbouring weights are considered
+        // shortest path tree only works when weights are 1 anyway ..
         queue.enqueue(Edge(start,1))
         while (!queue.isEmpty()) {
             var cur = queue.dequeue()
@@ -153,7 +153,7 @@ data class Graph(var adjList:List<List<Edge>>) {
             for (n in nei) {
                 if (distances[n.toNode] == inf) {
                     queue.enqueue(n)
-                    distances[n.toNode] = distances[cur.toNode] + n.weight
+                    distances[n.toNode] = distances[cur.toNode] + 1
                     prev[n.toNode] = cur.toNode
                 }
             }
@@ -223,11 +223,11 @@ data class Graph(var adjList:List<List<Edge>>) {
 // (first line number of nodes and number o edges
 // .. and then e lines for each edeg)
 // [what about weights ???]
-5 4
-1 2
-3 2
-4 3
-1 4
+//5 4
+//1 2
+//3 2
+//4 3
+//1 4
 
 fun main(ars: Array<String>) {
 
